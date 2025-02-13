@@ -71,14 +71,13 @@ const RegistrationForm: React.FC = () => {
    };
 
   return (
-    <div data-testid={'registration-form-container'} style={styles.container}>
+    <div style={styles.container}>
       <h2>Register</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
 
         <div style={styles.inputGroup}>
           <label htmlFor="fullName">Full Name</label>
           <input
-            data-testid={'registration-full-name'}
             type="text"
             id="fullName"
             value={fullName}
@@ -91,7 +90,6 @@ const RegistrationForm: React.FC = () => {
         <div style={styles.inputGroup}>
           <label htmlFor="email">Email</label>
           <input
-            data-testid={'registration-email'}
             type="email"
             id="email"
             value={email}
@@ -104,7 +102,6 @@ const RegistrationForm: React.FC = () => {
         <div style={styles.inputGroup}>
           <label htmlFor="password">Password</label>
           <input
-            data-testid={'registration-password'}
             type="password"
             id="password"
             value={password}
@@ -117,7 +114,6 @@ const RegistrationForm: React.FC = () => {
         <div style={styles.inputGroup}>
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
-            data-testid={'registration-confirm-password'}
             type="password"
             id="confirmPassword"
             value={confirmPassword}
@@ -129,10 +125,9 @@ const RegistrationForm: React.FC = () => {
 
         <div style={styles.inputGroup}>
           <label>Gender</label>
-          <div data-testid={'registration-gender-radio'} style={styles.radioContainer}>
+          <div style={styles.radioContainer}>
             <label>
               <input
-                data-testid={'registration-gender-male'}
                 type="radio"
                 name="gender"
                 value="male"
@@ -143,7 +138,6 @@ const RegistrationForm: React.FC = () => {
             </label>
             <label style={{ marginLeft: '20px' }}>
               <input
-                data-testid={'registration-gender-female'}
                 type="radio"
                 name="gender"
                 value="female"
@@ -158,7 +152,6 @@ const RegistrationForm: React.FC = () => {
         <div style={styles.inputGroup}>
           <label htmlFor="age">Age</label>
           <select
-            data-testid={'registration-select-age'}
             id="age"
             value={age}
             onChange={(e) => setAge(Number(e.target.value))}
@@ -174,7 +167,6 @@ const RegistrationForm: React.FC = () => {
 
         <div data-testid={'registration-deposit-selection'}style={styles.buttonGroup}>
           <button
-            data-testid={'registration-deposit-button-50'}
             type="button"
             style={{
               ...styles.depositButton,
@@ -210,7 +202,6 @@ const RegistrationForm: React.FC = () => {
         <div style={styles.inputGroup}>
           <label>
             <input
-              data-testid={'registration-checkbox-newsletter'}
               type="checkbox"
               checked={subscribeNewsletter}
               onChange={(e) => setSubscribeNewsletter(e.target.checked)}
@@ -222,7 +213,6 @@ const RegistrationForm: React.FC = () => {
         <div style={styles.inputGroup}>
           <label>
             <input
-              data-testid={'registration-checkbox-terms-conditions'}
               type="checkbox"
               checked={acceptTerms}
               onChange={(e) => setAcceptTerms(e.target.checked)}
@@ -231,9 +221,9 @@ const RegistrationForm: React.FC = () => {
           </label>
         </div>
 
-        {error && <p data-testid={'registration-error'} style={styles.error}>{error}</p>}
-        
-        <button data-testid={'registration-button-submit'} type="submit" style={styles.button}>
+        {error && <p style={styles.error}>{error}</p>}
+
+        <button  type="submit" style={styles.button}>
           Register
         </button>
       </form>

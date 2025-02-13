@@ -41,17 +41,17 @@ const RegistrationSuccess: React.FC = () => {
   }
 
   return (
-    <div data-testid={'registration-success-container'} style={styles.container}>
-      <h2 >Registration Successful!</h2>
-      <p data-testid={'registration-success-full-name'}><strong>Full Name:</strong> {fullName}</p>
-      <p data-testid={'registration-success-email'}><strong>Email:</strong> {email}</p>
-      <p data-testid={'registration-success-password'}><strong>Password:</strong> {password}</p>
-      <p data-testid={'registration-success-newsletter'}><strong>Subscribed to Newsletter:</strong> {subscribeNewsletter ? 'Yes' : 'No'}</p>
-      <p data-testid={'registration-success-terms-conditions'}><strong>Accepted Terms & Conditions:</strong> {acceptTerms ? 'Yes' : 'No'}</p>
-      <p data-testid={'registration-success-gender'}><strong>Gender:</strong> {gender}</p>
-      <p data-testid={'registration-success-age'}><strong>Age:</strong> {age}</p>
+    <div style={styles.container}>
+      <h2>Registration Successful!</h2>
+      <p><strong>Full Name:</strong> {fullName}</p>
+      <p><strong>Email:</strong> {email}</p>
+      <p><strong>Password:</strong> {password}</p>
+      <p><strong>Subscribed to Newsletter:</strong> {subscribeNewsletter ? 'Yes' : 'No'}</p>
+      <p><strong>Accepted Terms & Conditions:</strong> {acceptTerms ? 'Yes' : 'No'}</p>
+      <p><strong>Gender:</strong> {gender}</p>
+      <p><strong>Age:</strong> {age}</p>
 
-      <h3 data-testid={'registration-success-deposit'}>
+      <h3>
         {selectedDeposit
           ? `Deposit: €${selectedDeposit}`
           : 'No deposit made'}
