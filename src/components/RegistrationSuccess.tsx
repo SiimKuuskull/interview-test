@@ -6,7 +6,7 @@ import { CSSProperties } from 'react';
 interface RegistrationData {
   fullName: string;
   email: string;
-  password: string;  // Display for demo only
+  password: string;
   subscribeNewsletter: boolean;
   acceptTerms: boolean;
   gender: string;
@@ -18,9 +18,6 @@ const RegistrationSuccess: React.FC = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  // In a real-world scenario, you might handle state not existing 
-  // (e.g., user directly visited /registration-success).
-  // We'll assume state is properly passed.
   const {
     fullName,
     email,
@@ -32,7 +29,6 @@ const RegistrationSuccess: React.FC = () => {
     selectedDeposit
   } = (state as RegistrationData) || {};
 
-  // Optional: If no state found, you could redirect the user back to the form.
   if (!fullName || !email) {
     return (
       <div style={styles.container}>
@@ -49,13 +45,13 @@ const RegistrationSuccess: React.FC = () => {
       <h2 >Registration Successful!</h2>
       <p data-testid={'registration-success-full-name'}><strong>Full Name:</strong> {fullName}</p>
       <p data-testid={'registration-success-email'}><strong>Email:</strong> {email}</p>
-      <p data-testid={'registration-success-password'}><strong>Password (demo only):</strong> {password}</p>
+      <p data-testid={'registration-success-password'}><strong>Password:</strong> {password}</p>
       <p data-testid={'registration-success-newsletter'}><strong>Subscribed to Newsletter:</strong> {subscribeNewsletter ? 'Yes' : 'No'}</p>
       <p data-testid={'registration-success-terms-conditions'}><strong>Accepted Terms & Conditions:</strong> {acceptTerms ? 'Yes' : 'No'}</p>
       <p data-testid={'registration-success-gender'}><strong>Gender:</strong> {gender}</p>
       <p data-testid={'registration-success-age'}><strong>Age:</strong> {age}</p>
 
-      <h3>
+      <h3 data-testid={'registration-success-deposit'}>
         {selectedDeposit
           ? `Deposit: €${selectedDeposit}`
           : 'No deposit made'}
@@ -70,7 +66,6 @@ const RegistrationSuccess: React.FC = () => {
 
 export default RegistrationSuccess;
 
-// --- STYLES ---
 const styles: { [key: string]: CSSProperties } = {
   container: {
     width: '400px',

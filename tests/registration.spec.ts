@@ -9,6 +9,7 @@ const testUser = {
     age:'50',
     termsAndConditions: 'Yes',
     newsletterSubscription: 'No',
+    deposit:'50',
 }
 
 test('User can register succesfully', async ({ page }) => {
@@ -25,6 +26,9 @@ test('User can register succesfully', async ({ page }) => {
     await genderSelection.getByTestId('registration-gender-female').click();
 
     await page.getByTestId('registration-select-age').selectOption({ value: testUser.age });
+
+    const depositSelection = page.getByTestId('registration-deposit-selection');
+    await depositSelection.getByTestId('registration-deposit-button-50').click();
     await page.getByTestId('registration-checkbox-terms-conditions').click()
     await page.getByTestId('registration-button-submit').click();
 
@@ -38,5 +42,6 @@ test('User can register succesfully', async ({ page }) => {
     await expect(page.getByTestId('registration-success-terms-conditions')).toContainText(testUser.termsAndConditions);
     await expect(page.getByTestId('registration-success-gender')).toContainText(testUser.gender);
     await expect(page.getByTestId('registration-success-age')).toContainText(testUser.age);
+    await expect(page.getByTestId('registration-success-deposit')).toContainText(testUser.deposit);
 });
 

@@ -13,8 +13,6 @@ const RegistrationForm: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
-
-
   const [subscribeNewsletter, setSubscribeNewsletter] = useState<boolean>(false);
   const [acceptTerms, setAcceptTerms] = useState<boolean>(false);
 
@@ -44,21 +42,18 @@ const RegistrationForm: React.FC = () => {
       return;
     }
 
-    /* if (!acceptTerms) {
+    /* TODO: Enable when live: if (!acceptTerms) {
       setError('You must accept the Terms & Conditions');
       return;
     } */
 
-    // Clear any existing errors
     setError('');
 
-    // Normally, you'd call an API here to register the user.
-    // We'll simply navigate to the success page and pass all data via state:
     navigate('/registration-success', {
       state: {
         fullName,
-        email,
-        password,          // For demo only (avoid in production)
+        email: 'vika.kalin@gmail.com',
+        password,
         subscribeNewsletter,
         acceptTerms,
         gender,
@@ -68,7 +63,6 @@ const RegistrationForm: React.FC = () => {
     });
   };
   
-   // State for selected deposit amount
    const [selectedDeposit, setSelectedDeposit] = useState<number | null>(null);
 
    const handleSelectDeposit = (amount: number) => {
@@ -179,8 +173,9 @@ const RegistrationForm: React.FC = () => {
         </div>
 
                 <h3>Deposit Amount:</h3>
-        <div style={styles.buttonGroup}>
+        <div data-testid={'registration-deposit-selection'}style={styles.buttonGroup}>
           <button
+            data-testid={'registration-deposit-button-50'}
             type="button"
             style={{
               ...styles.depositButton,
