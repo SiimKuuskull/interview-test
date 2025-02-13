@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Technical Interview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Our developer has been working on creating a registration page for company's new exciting campaign. They have asked you to manually test the registration flow and create automated tests. They have also attached a list of requirements that should be working as expected. 
 
-Currently, two official plugins are available:
+You can check `package.json` for available commands to run with `npm run <script-name>`.  
+To setup the project, please make sure you have [nodejs](https://nodejs.dev/) installed, then run `npm install` && `npm run build` 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+# Registration page list of requirements:
+- User can register themselves to the campaign
+This means all the input fields must be visible and usable:
+Name, Email, Password, Password confirmation, Gender, Age, deposit buttons, checkboxes(subscription to our newsletter and T&C)
+- User must enter a valid name
+- User must have a valid email
+- User can select their gender
+- User must be in an age range of 21 to 99
+- User must place a deposit of pre-defined amount of 50,100 or 150 euros
+- User must agree to the campaign's terms&conditions
+- Should redirect to registration success page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Registration success page requirements
+- Should display a success message when registration is succesful
+- All the user's info should be visible and correct.
+- There should be a button to return to the registration page and it should redirect to the registration page
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Automation
+- Create one positive test case for complete registration flow.
+- When/if you counter any bugs, cover these cases also with automated tests.
