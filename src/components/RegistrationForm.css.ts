@@ -31,14 +31,14 @@ interface StyleProps {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
-    width: '100%', // Ensuring inputs align properly
+    width: '100%',
   },
   input: {
     padding: '8px',
     width: '100%',
     boxSizing: 'border-box',
     backgroundColor: '#353b5b',
-    color: '#ffffff', // Text visibility improvement
+    color: '#ffffff', 
     border: '1px solid #ccc',
     borderRadius: '5px',
   },
@@ -80,7 +80,7 @@ interface StyleProps {
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: '5px',
-    gap: '10px', // Spacing between radio buttons
+    gap: '10px',
   },
 };
 
