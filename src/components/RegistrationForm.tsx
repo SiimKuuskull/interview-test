@@ -74,7 +74,6 @@ const RegistrationForm: React.FC = () => {
     <div data-testid={'registration-form-container'} style={styles.container}>
       <h2>Register</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
-        {error && <p data-testid={'registration-error'} style={styles.error}>{error}</p>}
 
         <div style={styles.inputGroup}>
           <label htmlFor="fullName">Full Name</label>
@@ -232,6 +231,8 @@ const RegistrationForm: React.FC = () => {
           </label>
         </div>
 
+        {error && <p data-testid={'registration-error'} style={styles.error}>{error}</p>}
+        
         <button data-testid={'registration-button-submit'} type="submit" style={styles.button}>
           Register
         </button>
