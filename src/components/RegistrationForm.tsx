@@ -1,6 +1,7 @@
 
-import React, { useState, FormEvent, CSSProperties } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { styles } from './RegistrationForm.css'
 
 
 type Gender = 'male' | 'female';
@@ -172,7 +173,6 @@ const RegistrationForm: React.FC = () => {
           </select>
         </div>
 
-                <h3>Deposit Amount:</h3>
         <div data-testid={'registration-deposit-selection'}style={styles.buttonGroup}>
           <button
             data-testid={'registration-deposit-button-50'}
@@ -242,7 +242,11 @@ const RegistrationForm: React.FC = () => {
 
 export default RegistrationForm;
 
-const styles: { [key: string]: CSSProperties } = {
+/*const styles: { [key: string]: CSSProperties } = {
+
+  body: {
+    backgroundColor:'#1b1f38',
+  },
   container: {
     width: '400px',
     margin: '50px auto',
@@ -250,6 +254,7 @@ const styles: { [key: string]: CSSProperties } = {
     border: '1px solid #ccc',
     borderRadius: '10px',
     textAlign: 'center',
+    backgroundColor:'#38395b',
   },
   form: {
     display: 'flex',
@@ -265,23 +270,26 @@ const styles: { [key: string]: CSSProperties } = {
     padding: '8px',
     width: '100%',
     boxSizing: 'border-box',
+    backgroundColor: '#353b5b',
   },
   button: {
     padding: '10px',
     cursor: 'pointer',
+     backgroundColor: '#c5e900',
   },
   buttonGroup: {
     display: 'flex',
-    justifyContent: 'space-around',
-    marginTop: '20px',
+    justifyContent: 'space-evenly',
+    marginTop: '1px',
   },
   depositButton: {
     padding: '8px 12px',
     cursor: 'pointer',
+    backgroundColor: '#1c203b',
   },
   activeDeposit: {
-    backgroundColor: '#8fbc8f',
-    border: '1px solid #006400',
+    backgroundColor: '#353b5b',
+    border: '2px solid #c5e900',
     fontWeight: 'bold',
   },
   error: {
@@ -294,3 +302,4 @@ const styles: { [key: string]: CSSProperties } = {
     marginTop: '5px',
   },
 };
+*/

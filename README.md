@@ -1,28 +1,33 @@
 # Technical Interview
 
-Our developer has been working on creating a registration page for company's new exciting campaign. They have asked you to manually test the registration flow and create automated tests. They have also attached a list of requirements that should be working as expected. 
+Our developer has been working on creating a registration page for the company's new and exciting campaign. They have asked you to manually test the registration flow and create automated tests. They have also attached a list of requirements that should be met.
 
 You can check `package.json` for available commands to run with `npm run <script-name>`.  
 To setup the project, please make sure you have [nodejs](https://nodejs.dev/) installed, then run `npm install` && `npm run build` 
 
 
-# Registration page requirements:
-- User can register themselves to the campaign
-This means all the input fields must be visible and usable:
-Name, Email, Password, Password confirmation, Gender, Age, deposit buttons, checkboxes(subscription to our newsletter and T&C)
-- User must enter a valid name
-- User must have a valid email
-- User can select their gender
-- User must be in an age range of 21 to 99
-- User must place a deposit of pre-defined amount of 50,100 or 150 euros
-- User must agree to the campaign's terms&conditions
-- Should redirect to registration success page
+# Registration Page Requirements:
+Users must be able to register for the campaign. This means all input fields must be visible and usable:
+- Name
+- Email
+- Password
+- Password confirmation
+- Gender selection
+- Age input
+- Deposit buttons (for selecting the deposit amount)
+- Checkboxes (for subscribing to the newsletter and accepting Terms & Conditions)
+- Users must enter a valid name.
+- Users must provide a valid email address.
+- Users must be able to select their gender.
+- Users must be between the ages of 21 and 99.
+- Users must make a deposit of a predefined amount: 50, 100, or 150 euros.
+- Users must agree to the campaign's Terms & Conditions.
+- Upon successful registration, users should be redirected to the registration success page.
+# Registration Success Page Requirements:
+- A success message should be displayed when registration is successful.
+- All user information should be correctly displayed.
+- There should be a button to return to the registration page, which must function correctly and redirect back to the registration page.
+ # Automation:
+- Create one positive test case covering the complete registration flow.
+- If you encounter any bugs, write additional automated test cases to cover these scenarios.
 
-# Registration success page requirements
-- Should display a success message when registration is succesful
-- All the user's info should be visible and correct.
-- There should be a button to return to the registration page and it should redirect to the registration page
-
-# Automation
-- Create one positive test case for complete registration flow.
-- When/if you counter any bugs, cover these cases also with automated tests.
