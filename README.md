@@ -6,7 +6,7 @@ You can check `package.json` for available commands to run with `npm run <script
 To setup the project, please make sure you have [nodejs](https://nodejs.dev/) installed, then run `npm install` && `npm run build` 
 
 
-# Registration page list of requirements:
+# Registration page requirements:
 - User can register themselves to the campaign
 This means all the input fields must be visible and usable:
 Name, Email, Password, Password confirmation, Gender, Age, deposit buttons, checkboxes(subscription to our newsletter and T&C)
